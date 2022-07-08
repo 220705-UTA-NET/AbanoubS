@@ -1,0 +1,15 @@
+/Users/abanoubfetaha/220705-UTA-NET/AbanoubS/FirstWeek/Banking/bin/Debug/net6.0/Banking
+/Users/abanoubfetaha/220705-UTA-NET/AbanoubS/FirstWeek/Banking/bin/Debug/net6.0/Banking.deps.json
+/Users/abanoubfetaha/220705-UTA-NET/AbanoubS/FirstWeek/Banking/bin/Debug/net6.0/Banking.runtimeconfig.json
+/Users/abanoubfetaha/220705-UTA-NET/AbanoubS/FirstWeek/Banking/bin/Debug/net6.0/Banking.dll
+/Users/abanoubfetaha/220705-UTA-NET/AbanoubS/FirstWeek/Banking/bin/Debug/net6.0/Banking.pdb
+/Users/abanoubfetaha/220705-UTA-NET/AbanoubS/FirstWeek/Banking/obj/Debug/net6.0/Banking.csproj.AssemblyReference.cache
+/Users/abanoubfetaha/220705-UTA-NET/AbanoubS/FirstWeek/Banking/obj/Debug/net6.0/Banking.GeneratedMSBuildEditorConfig.editorconfig
+/Users/abanoubfetaha/220705-UTA-NET/AbanoubS/FirstWeek/Banking/obj/Debug/net6.0/Banking.AssemblyInfoInputs.cache
+/Users/abanoubfetaha/220705-UTA-NET/AbanoubS/FirstWeek/Banking/obj/Debug/net6.0/Banking.AssemblyInfo.cs
+/Users/abanoubfetaha/220705-UTA-NET/AbanoubS/FirstWeek/Banking/obj/Debug/net6.0/Banking.csproj.CoreCompileInputs.cache
+/Users/abanoubfetaha/220705-UTA-NET/AbanoubS/FirstWeek/Banking/obj/Debug/net6.0/Banking.dll
+/Users/abanoubfetaha/220705-UTA-NET/AbanoubS/FirstWeek/Banking/obj/Debug/net6.0/refint/Banking.dll
+/Users/abanoubfetaha/220705-UTA-NET/AbanoubS/FirstWeek/Banking/obj/Debug/net6.0/Banking.pdb
+/Users/abanoubfetaha/220705-UTA-NET/AbanoubS/FirstWeek/Banking/obj/Debug/net6.0/Banking.genruntimeconfig.cache
+/Users/abanoubfetaha/220705-UTA-NET/AbanoubS/FirstWeek/Banking/obj/Debug/net6.0/ref/Banking.dll
