@@ -19,7 +19,7 @@ namespace GuessGame
 
                 switch (initialGame)
                 {
-                    case 1:
+                    case 1: //Random Number Game
                         Random r = new Random();
 
                     int random = r.Next(1,100); //Generates a random number between 1 and 100
@@ -95,7 +95,7 @@ namespace GuessGame
                     
                     break;
 
-                    case 2:
+                    case 2: //Rock Paper Scissors
                         bool gameLoop = true;
 
                 Console.WriteLine("Welcome to Rock, Paper, Scisors!");
@@ -106,113 +106,117 @@ namespace GuessGame
                 int userPoints = 0;
                 int computerPoints = 0;
                 try{
-
-                while (gameLoop)
-                {
-                    Random g = new Random();
-                    int systemChoice = g.Next(1,4);
-
-                    switch (userInput)
+                    while (gameLoop)
                     {
-                        case 1:
-                            Console.WriteLine("Press 1 for Rock, 2 for Paper, 3 for Scisors");       
+                        Random g = new Random();
+                        int systemChoice = g.Next(1,4);
+
+                        switch (userInput)
+                        {
+                            case 1:
+                                Console.WriteLine("Press 1 for Rock, 2 for Paper, 3 for Scisors");  
+                                Console.WriteLine("Press 0 to exit the game.");           
+                                break;
+                            case 0:
+                                gameLoop = false; 
+                                break;
+                            default :
+                                Console.WriteLine("Press choose one of the options");
+                                break;
+                        }
+
+                        string Choice = Console.ReadLine();
+                        int userChoice = int.Parse(Choice);
+
+                        switch (userChoice)
+                        {
+                            case 1:
+                            if(systemChoice == 1)
+                            {
+                                Console.WriteLine("User Choice: Rock");
+                                Console.WriteLine("Computer Choice: Rock");
+                                Console.WriteLine("It's a tie");
+                            }
+                            else if(systemChoice == 2)
+                            {
+                                Console.WriteLine("User Choice: Paper");
+                                Console.WriteLine("Computer Choice: Rock");
+                                Console.WriteLine("User wins!");
+                                userPoints++;
+                                Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
+                            }
+                            else if (systemChoice == 3)
+                            {
+                                Console.WriteLine("User Choice: Scissors");
+                                Console.WriteLine("Computer Choice: Rock");
+                                Console.WriteLine("Computer Wins");
+                                computerPoints++;
+                                Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
+                            }
                             break;
-                        case 0:
+                            case 2:
+                            if (systemChoice == 1)
+                            {
+                                Console.WriteLine("User Choice: Rock");
+                                Console.WriteLine("Computer Choice: Paper");
+                                Console.WriteLine("Computer Wins!");
+                                computerPoints++;
+                                Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
+                            }
+                            else if (systemChoice == 2)
+                            {
+                                Console.WriteLine("User Choice: Paper");
+                                Console.WriteLine("Computer Choice: Paper");
+                                Console.WriteLine("It's a tie!");
+                            }
+                            else if (systemChoice == 3)
+                            {
+                                Console.WriteLine("User Choice: Scissors");
+                                Console.WriteLine("Computer Choice: Paper");
+                                Console.WriteLine("User Wins!");
+                                userPoints++;
+                                Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
+                            }
+                            break;
+                            case 3:
+                            if (systemChoice == 1)
+                            {
+                                Console.WriteLine("User Choice: Rock");
+                                Console.WriteLine("Computer Choice: Scissors");
+                                Console.WriteLine("User Wins!");
+                                userPoints++;
+                                Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
+                            }
+                            else if (systemChoice ==2)
+                            {
+                                Console.WriteLine("User Choice: Paper");
+                                Console.WriteLine("Computer Choice: Scissors");
+                                Console.WriteLine("Computer Wins!");
+                                computerPoints++;
+                                Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
+                            }
+                            else if (systemChoice == 3)
+                            {
+                                Console.WriteLine("User Choice: Scissors");
+                                Console.WriteLine("Computer Choice: Scissors");
+                                Console.WriteLine("It's a tie!");
+                            }
+                            break;
+                            case 0:
+                            gameLoop = false;
+                            break;
+                        }
+                    }
+                        Console.WriteLine("Do you wish to play again?");
+                        Console.WriteLine("Enter Y or N");
+                        string playAgain = Console.ReadLine();
+                        if (playAgain == "N" || playAgain == "n")
+                        {
                             gameLoop = false; 
-                            break;
-                        default :
-                            Console.WriteLine("Press choose one of the options");
-                            break;
-                    }
-
-                    string Choice = Console.ReadLine();
-                    int userChoice = int.Parse(Choice);
-
-                    switch (systemChoice)
-                    {
-                        case 1:
-                        if(userChoice == 1)
-                        {
-                            Console.WriteLine("User Choice: Rock");
-                            Console.WriteLine("Computer Choice: Rock");
-                            Console.WriteLine("It's a tie");
-                        }
-                        else if(userChoice == 2)
-                        {
-                            Console.WriteLine("User Choice: Paper");
-                            Console.WriteLine("Computer Choice: Rock");
-                            Console.WriteLine("User wins!");
-                            userPoints++;
+                            Console.WriteLine("Thank You for playing!"); 
                             Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
                         }
-                        else if (userChoice == 3)
-                        {
-                            Console.WriteLine("User Choice: Scissors");
-                            Console.WriteLine("Computer Choice: Rock");
-                            Console.WriteLine("Computer Wins");
-                            computerPoints++;
-                            Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
-                        }
-                        break;
-                        case 2:
-                        if (userChoice == 1)
-                        {
-                            Console.WriteLine("User Choice: Rock");
-                            Console.WriteLine("Computer Choice: Paper");
-                            Console.WriteLine("Computer Wins!");
-                            computerPoints++;
-                            Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
-                        }
-                        else if (userChoice == 2)
-                        {
-                            Console.WriteLine("User Choice: Paper");
-                            Console.WriteLine("Computer Choice: Paper");
-                            Console.WriteLine("It's a tie!");
-                        }
-                        else if (userChoice == 3)
-                        {
-                            Console.WriteLine("User Choice: Scissors");
-                            Console.WriteLine("Computer Choice: Paper");
-                            Console.WriteLine("User Wins!");
-                            userPoints++;
-                            Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
-                        }
-                        break;
-                        case 3:
-                        if (userChoice == 1)
-                        {
-                            Console.WriteLine("User Choice: Rock");
-                            Console.WriteLine("Computer Choice: Scissors");
-                            Console.WriteLine("User Wins!");
-                            userPoints++;
-                            Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
-                        }
-                        else if (userChoice ==2)
-                        {
-                            Console.WriteLine("User Choice: Paper");
-                            Console.WriteLine("Computer Choice: Scissors");
-                            Console.WriteLine("Computer Wins!");
-                            computerPoints++;
-                            Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
-                        }
-                        else if (userChoice == 3)
-                        {
-                            Console.WriteLine("User Choice: Scissors");
-                            Console.WriteLine("Computer Choice: Scissors");
-                            Console.WriteLine("It's a tie!");
-                        }
-                        break;
-                    }
-                    Console.WriteLine("Do you wish to play again?");
-                    Console.WriteLine("Enter Y or N");
-                    string playAgain = Console.ReadLine();
-                    if (playAgain == "N" || playAgain == "n")
-                    {
-                        gameLoop = false; 
-                        Console.WriteLine("Thank You for playing!"); 
-                        Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
-                    }
-                } 
+                     
                 }
                 catch (Exception m)
                 {
