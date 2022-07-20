@@ -29,7 +29,8 @@ namespace GuessGame
 
                     int Streak = 0;
                     int count = 0;
-
+                    
+                    Console.WriteLine();
                     Console.WriteLine("Please choose a number between 1 and 100.");
                     Console.WriteLine("If you guess the number within 5 trials, you get a point.");
                     Console.WriteLine("If you do not enter a numeric value, the game will exit.");
@@ -43,20 +44,23 @@ namespace GuessGame
                                 
                                 if (b > random)
                                 {
-                                    count += 1;               
+                                    count += 1;                                               
                                     Console.WriteLine("Guess too high! Guess lower.");
                                     Console.WriteLine("Count: " + count);
+                                    Console.WriteLine();
                                 }
                                 else if(b < random)
                                 {
-                                    count += 1;
+                                    count += 1;                                   
                                     Console.WriteLine("Guess too low! Guess higher.");
                                     Console.WriteLine("Count: " + count);
+                                    Console.WriteLine();
                                 }
                                 else if (b == random)
                                 {
                                     count += 1;
                                     Console.WriteLine("Correct Answer!");
+                                    Console.WriteLine();
                                     count = 6;
                                     random += random2;
                                     if (random >=99) {random -=50;}
@@ -64,6 +68,7 @@ namespace GuessGame
                                     Streak += 1;
                                 }
                             } while (count < 5);
+                            Console.WriteLine();
                             Console.WriteLine("Game Over!   " + "Streak: " + Streak);
                             Console.WriteLine("Please Select one of the options: ");
                             Console.WriteLine("Press 1 play again");
@@ -114,8 +119,10 @@ namespace GuessGame
                         switch (userInput)
                         {
                             case 1:
+                                Console.WriteLine();
                                 Console.WriteLine("Press 1 for Rock, 2 for Paper, 3 for Scisors");  
-                                Console.WriteLine("Press 0 to exit the game.");           
+                                Console.WriteLine("Press 0 to exit the game.");    
+                                Console.WriteLine();       
                                 break;
                             case 0:
                                 gameLoop = false; 
@@ -133,72 +140,81 @@ namespace GuessGame
                             case 1:
                             if(systemChoice == 1)
                             {
-                                Console.WriteLine("User Choice: Rock");
+                                Console.WriteLine();
                                 Console.WriteLine("Computer Choice: Rock");
+                                Console.WriteLine("User Choice: Rock");
                                 Console.WriteLine("It's a tie");
                             }
                             else if(systemChoice == 2)
                             {
-                                Console.WriteLine("User Choice: Paper");
-                                Console.WriteLine("Computer Choice: Rock");
-                                Console.WriteLine("User wins!");
-                                userPoints++;
+                                Console.WriteLine();
+                                Console.WriteLine("Computer Choice: Paper");
+                                Console.WriteLine("User Choice: Rock");
+                                Console.WriteLine("Computer wins!");
+                                computerPoints++;
                                 Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
                             }
                             else if (systemChoice == 3)
                             {
-                                Console.WriteLine("User Choice: Scissors");
-                                Console.WriteLine("Computer Choice: Rock");
-                                Console.WriteLine("Computer Wins");
-                                computerPoints++;
+                                Console.WriteLine();
+                                Console.WriteLine("Computer Choice: Scissors");
+                                Console.WriteLine("User Choice: Rock");
+                                Console.WriteLine("User Wins");
+                                userPoints++;
                                 Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
                             }
                             break;
                             case 2:
                             if (systemChoice == 1)
                             {
-                                Console.WriteLine("User Choice: Rock");
-                                Console.WriteLine("Computer Choice: Paper");
-                                Console.WriteLine("Computer Wins!");
-                                computerPoints++;
+                                Console.WriteLine();
+                                Console.WriteLine("Computer Choice: Rock");
+                                Console.WriteLine("User Choice: Paper");
+                                Console.WriteLine("User Wins!");
+                                userPoints++;
                                 Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
                             }
                             else if (systemChoice == 2)
                             {
-                                Console.WriteLine("User Choice: Paper");
+                                Console.WriteLine();
                                 Console.WriteLine("Computer Choice: Paper");
+                                Console.WriteLine("User Choice: Paper");
                                 Console.WriteLine("It's a tie!");
                             }
                             else if (systemChoice == 3)
                             {
-                                Console.WriteLine("User Choice: Scissors");
-                                Console.WriteLine("Computer Choice: Paper");
-                                Console.WriteLine("User Wins!");
-                                userPoints++;
+                                Console.WriteLine();
+                                Console.WriteLine("Computer Choice: Scissors");
+                                Console.WriteLine("User Choice: Paper");
+                                Console.WriteLine("Computer Wins!");
+                                computerPoints++;
                                 Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
                             }
                             break;
                             case 3:
                             if (systemChoice == 1)
                             {
-                                Console.WriteLine("User Choice: Rock");
-                                Console.WriteLine("Computer Choice: Scissors");
-                                Console.WriteLine("User Wins!");
-                                userPoints++;
-                                Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
-                            }
-                            else if (systemChoice ==2)
-                            {
-                                Console.WriteLine("User Choice: Paper");
-                                Console.WriteLine("Computer Choice: Scissors");
+                                Console.WriteLine();
+                                Console.WriteLine("Computer Choice: Rock");
+                                Console.WriteLine("User Choice: Scissors");
                                 Console.WriteLine("Computer Wins!");
                                 computerPoints++;
                                 Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
                             }
+                            else if (systemChoice ==2)
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine("Computer Choice: Paper");
+                                Console.WriteLine("User Choice: Scissors");
+                                Console.WriteLine("User Wins!");
+                                userPoints++;
+                                Console.WriteLine("User Points: " + userPoints + " Computer Points: " + computerPoints); 
+                            }
                             else if (systemChoice == 3)
                             {
-                                Console.WriteLine("User Choice: Scissors");
+                                Console.WriteLine();
                                 Console.WriteLine("Computer Choice: Scissors");
+                                Console.WriteLine("User Choice: Scissors");
                                 Console.WriteLine("It's a tie!");
                             }
                             break;
@@ -207,6 +223,7 @@ namespace GuessGame
                             break;
                         }
                     }
+                        Console.WriteLine();
                         Console.WriteLine("Do you wish to play again?");
                         Console.WriteLine("Enter Y or N");
                         string playAgain = Console.ReadLine();
