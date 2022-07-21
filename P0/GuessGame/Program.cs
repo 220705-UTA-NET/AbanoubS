@@ -97,6 +97,8 @@ namespace GuessGame
                     }
 
                     Console.WriteLine("Thank You for playing the guessing game!");
+                    Console.WriteLine();
+
                     
                     break;
 
