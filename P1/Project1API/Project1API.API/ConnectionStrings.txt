@@ -1,0 +1,1 @@
+Server=tcp:myfirstdatabase-abanoub.database.windows.net,1433;Initial Catalog=School;Persist Security Info=False;User ID=abanoub148;Password=G7m12a3a;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;

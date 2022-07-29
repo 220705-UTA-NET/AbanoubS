@@ -1,7 +1,6 @@
-
 namespace Banking 
 {
-    class Account
+    abstract class Account
     {
         //Fields / State
 
@@ -30,23 +29,28 @@ namespace Banking
 
         //Methods / behavior 
         //(acess modifier) (return type) (name) (parameters)
+        // public abstract double DisplayBalance();// must be overridden 
+        // public virtual double DisplayBalance();
+
+
+
          public void setAccountNumber(int accountNumber)
         {
             this.accountNumber = accountNumber;
         }
 
-        public int getAccountNumber()
+        public virtual int getAccountNumber()
         {
             return accountNumber;
         }
 
-        public string DisplayBalance()
+        public virtual string DisplayBalance()
         {
-            string balanceString = balance.ToString();
+            string balanceString = "From Account: " + balance.ToString();
             return balanceString;
         }
 
-        public void MakeDeposit (double amount, string note = "")
+        public virtual void MakeDeposit (double amount, string note = "")
         {
             if (amount <= 0)
             {
@@ -63,7 +67,7 @@ namespace Banking
                 transactions.Add(deposit);
             }
         }
-        public void MakeWithdrawal (double amount, string note = "")
+        public void makeWithdrawal (double amount, string note = "")
         {
             if (amount <= 0)
             {
@@ -80,7 +84,7 @@ namespace Banking
                 transactions.Add(withdrawal);
             }
         }
-        public string getAccountHistory()
+        public virtual string getAccountHistory()
         {
             var report = new System.Text.StringBuilder();
 

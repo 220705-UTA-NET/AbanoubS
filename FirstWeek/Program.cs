@@ -18,7 +18,7 @@ namespace Practice
 
             try{
                 int n;
-                if (int.TryParse(response, out int n))
+                if (int.TryParse(response, out n))
                 {
                      calc.Calculate(n);
                 }
@@ -29,6 +29,7 @@ namespace Practice
                 }
 
                 int  number = int.Parse(response); // returns an int
+                calc.Calculate(number);
             
                
             }
