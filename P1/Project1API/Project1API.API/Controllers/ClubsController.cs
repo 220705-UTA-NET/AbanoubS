@@ -26,15 +26,16 @@ namespace Project1API.API.Controllers
         // /post
         // /post/1
 
-
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Clubs>>> GetClubs( /* Get the season # from the route*/)
+        // localhost:9999/api/Clubs/2020
+        // localhost:9999/year
+        [HttpGet("{season}")]
+        public async Task<ActionResult<IEnumerable<Clubs>>> GetClubs(int season)
         {
             IEnumerable<Clubs> clubs;
 
             try
             {
-                clubs = await _repo.GetClubsAsync();
+                clubs = await _repo.GetClubsAsync(season);
             }
             catch (Exception e)
             {

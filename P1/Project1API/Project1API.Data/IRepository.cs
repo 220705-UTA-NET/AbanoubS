@@ -4,7 +4,7 @@ namespace Project1API.Data
 {
     public interface IRepository
     {
-        Task<IEnumerable<Clubs>> GetClubsAsync();
+        Task<IEnumerable<Clubs>> GetClubsAsync(int season);
     }
 }
 

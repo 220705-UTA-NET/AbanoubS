@@ -19,7 +19,7 @@ namespace Project1API.Data
         }
 
         // Methods
-        public async Task<IEnumerable<Clubs>> GetClubsAsync()
+        public async Task<IEnumerable<Clubs>> GetClubsAsync(int season)
         {
             List<Clubs> result = new();
 
@@ -28,19 +28,22 @@ namespace Project1API.Data
             await connection.OpenAsync();
 
             //string cmdText = "SELECT Position, Club, Points FROM Season21_22; SELECT Position, Club, Points FROM Season20_21; SELECT Position, Club, Points FROM Season19_20; SELECT Position, Club, Points FROM Season18_19; SELECT Position, Club, Points FROM Season17_18; SELECT Position, Club, Points FROM Season16_17; SELECT Position, Club, Points FROM Season15_16; SELECT Position, Club, Points FROM Season14_15; SELECT Position, Club, Points FROM Season13_14; SELECT Position, Club, Points FROM Season12_13; SELECT Position, Club, Points FROM Season11_12;";
-            string cmdText = $"SELECT Position, Club, Points FROM All_Seasons WHERE Season = {season};";
+
+            string cmdText = $"SELECT * FROM All_Seasons WHERE Season_End=@season;";
 
             using SqlCommand cmd = new(cmdText, connection);
+            cmd.Parameters.AddWithValue("@season", season);
 
             using SqlDataReader reader = await cmd.ExecuteReaderAsync();
 
-            while (reader.Read())
+            while (await reader.ReadAsync())
             {
-                int Position = reader.GetInt32(0);
-                string Club = reader.GetString(1);
-                int Points = reader.GetInt32(2);
+                int Position = reader.GetInt32(1);
+                int Points = reader.GetInt32(3);
+                string Club = reader.GetString(2);
+                //int Season_End = reader.GetInt32(4);
 
-                Clubs ClubWinners = new Clubs(Position, Club, Points);
+                Clubs ClubWinners = new(Position, Club, Points);
                 result.Add(ClubWinners);
             }
 
